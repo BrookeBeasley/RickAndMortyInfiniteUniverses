@@ -99,3 +99,94 @@ document.addEventListener("DOMContentLoaded", function () {
     // Display characters in the table when the page loads
     displayCharactersInTable(characters);
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const characterTableBody = document.getElementById("character-table-body");
+    const episodeChartCanvas = document.getElementById("episodeChart");
+
+    let characters = [
+        { name: 'Rick Sanchez', episodes: '69' },
+        { name: 'Morty Smith', episodes: '69' },
+        { name: 'Summer Smith', episodes: '60' },
+        { name: 'Beth Smith', episodes: '58' },
+        { name: 'Jerry Smith', episodes: '48' },
+        { name: 'Birdperson', episodes: '11' },
+        { name: 'Mr. Poopybutthole', episodes: '9' },
+        { name: 'Evil Morty', episodes: '6' },
+        // ... more characters
+    ];
+
+    function displayCharactersInTable(characterArray) {
+        characterTableBody.innerHTML = "";
+        characterArray.forEach(character => {
+            const row = document.createElement("tr");
+            const nameCell = document.createElement("td");
+            const episodesCell = document.createElement("td");
+            nameCell.textContent = character.name;
+            episodesCell.textContent = character.episodes;
+            row.appendChild(nameCell);
+            row.appendChild(episodesCell);
+            characterTableBody.appendChild(row);
+        });
+    }
+
+    function sortCharacters() {
+        const sortCriteria = document.getElementById("sortCriteria").value;
+        characters = sortArrayByCriteria(characters, sortCriteria);
+        displayCharactersInTable(characters);
+        updatePieChart();
+    }
+
+    function sortArrayByCriteria(array, criteria) {
+        return array.sort((a, b) => {
+            if (criteria === 'name') {
+                return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+            } else if (criteria === 'episodes') {
+                return b.episodes - a.episodes;
+            }
+        });
+    }
+
+    function sortTable(criteria) {
+        characters = sortArrayByCriteria(characters, criteria);
+        displayCharactersInTable(characters);
+        updatePieChart();
+    }
+
+    function updatePieChart() {
+        const episodeCounts = characters.map(character => parseInt(character.episodes));
+        const characterNames = characters.map(character => character.name);
+
+        const ctx = episodeChartCanvas.getContext('2d');
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: characterNames,
+                datasets: [{
+                    data: episodeCounts,
+                    backgroundColor: [
+                        '#63d0ff',
+                        '#f2ff00',
+                        '#ff00bb',
+                        '#ff0000',
+                        '#006611',
+                        '#9C27B0',
+                        '#795548',
+                        '#607D8B'
+                    ]
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Episode Counts by Character'
+                }
+            }
+        });
+    }
+
+    // Display characters in the table and pie chart when the page loads
+    displayCharactersInTable(characters);
+    updatePieChart();
+});
