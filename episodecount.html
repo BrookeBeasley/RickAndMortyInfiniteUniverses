@@ -31,27 +31,16 @@
     </div>
     <h2>Rick & Morty Characters</h2>
 
-    <div>
-        <label for="sortCriteria">Sort by:</label>
-        <select id="sortCriteria" onchange="sortCharacters()">
-            <option value="name">Alphabetical Names</option>
-            <option value="episodes">Highest Episode Counts</option>
-        </select>
-    </div>
+  
 
     <table>
-        <thead>
-            <tr>
-                <th onclick="sortTable('name')">Name</th>
-                <th onclick="sortTable('episodes')">Episodes</th>
-            </tr>
-        </thead>
+       
         <tbody id="character-table-body">
             <!-- Character information will be dynamically added here -->
         </tbody>
     </table>
 
-    <canvas id="episodeChart" width="400" height="400"></canvas>
+    <canvas id="episodeChart" width="200" height="200"></canvas>
 
        
     <footer>
