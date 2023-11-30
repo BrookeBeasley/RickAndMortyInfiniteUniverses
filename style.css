@@ -30,8 +30,8 @@ header h1 {
     
 }
 nav {
-    background-color: #333; /* Background color for the navigation bar */
-    padding: 15px 0; /* Adjust padding as needed */
+    background-color: #4900ff; /* Background color */
+    padding: 10px 0;
     text-align: center;
 }
 
@@ -43,7 +43,7 @@ nav ul {
 
 nav li {
     display: inline-block;
-    margin-right: 20px; /* Adjust the spacing between menu items */
+    margin-right: 30px; /* Adjust the spacing between menu items */
 }
 
 nav a {
@@ -69,6 +69,23 @@ p {
     font-size: 35px;
   }
 
+  #regenerate-button {
+    display: block;
+    margin: 5px auto; /* Adjust margin as needed */
+    padding: 10px 60px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    background-color: #f4d41d;
+    color: #000000;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#regenerate-button:hover {
+    background-color: #4900ff;
+}
+
   .converter-container {
     display: flex;
     flex-wrap: wrap;
@@ -83,12 +100,22 @@ p {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+.description-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.description {
+    max-width: 600px;
+    margin: 0 auto;
+}
 
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 5px;
     background-color: #111111;
-    position: fixed;
     bottom: 0;
     width: 100%;
+    margin-top: 20px; /* Adjust margin as needed */
+    
 }
