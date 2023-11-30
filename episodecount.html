@@ -6,6 +6,8 @@
     <title>Rick & Morty</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <body>
     <header>
@@ -24,14 +26,33 @@
     </nav>
     <div class="description-container">
         <p class="description">
-          Welcome! *buuuurp* On your travels across galaxies and dimensions, you may come across characters of all statuses. The possibilities are infinite! They're infinite, Morty!
+          *buuurp* Computer, retreive episode counts of appearances by main characters. And uhhh... Jerry.
         </p>
     </div>
-    <main id="character-container">
-        </main>
+    <h2>Rick & Morty Characters</h2>
 
-<button id="regenerate-button" onclick="fetchRandomCharacter()">Regenerate Character</button>
-    
+    <div>
+        <label for="sortCriteria">Sort by:</label>
+        <select id="sortCriteria" onchange="sortCharacters()">
+            <option value="name">Alphabetical Names</option>
+            <option value="episodes">Highest Episode Counts</option>
+        </select>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th onclick="sortTable('name')">Name</th>
+                <th onclick="sortTable('episodes')">Episodes</th>
+            </tr>
+        </thead>
+        <tbody id="character-table-body">
+            <!-- Character information will be dynamically added here -->
+        </tbody>
+    </table>
+
+    <canvas id="episodeChart" width="400" height="400"></canvas>
+
        
     <footer>
         &copy; 2023 Brooke Beasley

@@ -30,7 +30,7 @@ header h1 {
     
 }
 nav {
-    background-color: #4900ff; /* Background color */
+    background-color: #55ec23; /* Background color */
     padding: 10px 0;
     text-align: center;
 }
@@ -47,13 +47,13 @@ nav li {
 }
 
 nav a {
-    text-decoration: none;
-    color: #fff; /* Text color for menu items */
-    font-size: 1.2em;
+    text-decoration: bold;
+    color: #000; /* Text color for menu items */
+    font-size: 1.4em;
 }
 
 nav a:hover {
-    color: #ffcc00; /* Change color on hover if desired */
+    color: #4900ff; /* Change color on hover if desired */
 }
 
 main {
@@ -109,6 +109,28 @@ p {
     max-width: 600px;
     margin: 0 auto;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #4900ff;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #4900ff;
+    color: black;
+    cursor: pointer;
+        }
+
+        th:hover {
+            background-color: 	#ffff00;
+        }
 
 footer {
     text-align: center;
