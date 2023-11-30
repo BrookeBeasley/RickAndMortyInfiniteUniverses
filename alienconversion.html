@@ -5,20 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rick & Morty</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+
+    <title>Length Converter</title>
+    <script>
+        function lengthConverter(feetValue) {
+            // Assuming 1 foot is approximately 30.48 centimeters
+            var meters = feetValue * 30.48;
+            document.getElementById("outputMeters").innerHTML = meters.toFixed(2);
+        }
+    </script>
 </head>
 <body>
     <header>
-        <header style="background-image: url('images/header.jpg');">
+        <header style="background-image: url('images/mainheader2.jpg');">
             <h1>The Infinite Universes of Rick & Morty</h1>
         </header>
     </header>
     
     
-        <label>Feet</label>
-        <input id="inputFeet" type="number" placeholder="Feet"
+    <label>Feet</label>
+    <input id="inputFeet" type="number" placeholder="Feet"
         oninput="lengthConverter(this.value)" onchange="lengthConverter(this.value)">
-      </p>
-      <p>cm: <span id="outputMeters"></span></p>
+    <p>cm: <span id="outputMeters"></span></p>
 
     <footer>
         &copy; 2023 Brooke Beasley
