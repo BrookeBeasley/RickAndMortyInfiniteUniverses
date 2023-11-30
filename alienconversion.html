@@ -24,10 +24,72 @@
     </header>
     
     
-    <label>Feet</label>
-    <input id="inputFeet" type="number" placeholder="Feet"
-        oninput="lengthConverter(this.value)" onchange="lengthConverter(this.value)">
-    <p>cm: <span id="outputMeters"></span></p>
+    <script>
+        function lengthConverter(feetValue) {
+            // Assuming 1 foot is approximately 30.48 centimeters
+            var meters = feetValue * 30.48;
+            document.getElementById("outputMeters").innerHTML = meters.toFixed(2);
+        }
+    
+        function weightConverter(poundsValue) {
+            // Assuming 1 pound is approximately 0.453592 kilograms
+            var kilograms = poundsValue * 0.453592;
+            document.getElementById("outputKilograms").innerHTML = kilograms.toFixed(2);
+        }
+    
+        function temperatureConverter(fahrenheitValue) {
+            var celsius = (fahrenheitValue - 32) * 5/9;
+            document.getElementById("outputCelsius").innerHTML = celsius.toFixed(2);
+        }
+    
+        function distanceConverter(milesValue) {
+            // Assuming 1 mile is approximately 1.60934 kilometers
+            var kilometers = milesValue * 1.60934;
+            document.getElementById("outputKilometers").innerHTML = kilometers.toFixed(2);
+        }
+    
+        function speedConverter(mphValue) {
+            // Assuming 1 mph is approximately 1.60934 kph
+            var kph = mphValue * 1.60934;
+            document.getElementById("outputKPH").innerHTML = kph.toFixed(2);
+        }
+    </script>
+<div class="converter-container">
+    <!-- Length Converter -->
+    <div class="converter">
+        <label>Feet</label>
+        <input type="number" placeholder="Feet" oninput="lengthConverter(this.value)" onchange="lengthConverter(this.value)">
+        <p>cm: <span id="outputMeters"></span></p>
+    </div>
+
+    <!-- Weight Converter -->
+    <div class="converter">
+        <label>Pounds</label>
+        <input type="number" placeholder="Pounds" oninput="weightConverter(this.value)" onchange="weightConverter(this.value)">
+        <p>Kilograms: <span id="outputKilograms"></span></p>
+    </div>
+
+    <!-- Temperature Converter -->
+    <div class="converter">
+        <label>Fahrenheit</label>
+        <input type="number" placeholder="Fahrenheit" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+        <p>Celsius: <span id="outputCelsius"></span></p>
+    </div>
+
+    <!-- Distance Converter -->
+    <div class="converter">
+        <label>Miles</label>
+        <input type="number" placeholder="Miles" oninput="distanceConverter(this.value)" onchange="distanceConverter(this.value)">
+        <p>Kilometers: <span id="outputKilometers"></span></p>
+    </div>
+
+    <!-- Speed Converter -->
+    <div class="converter">
+        <label>MPH</label>
+        <input type="number" placeholder="MPH" oninput="speedConverter(this.value)" onchange="speedConverter(this.value)">
+        <p>KPH: <span id="outputKPH"></span></p>
+    </div>
+</div>    
 
     <footer>
         &copy; 2023 Brooke Beasley
