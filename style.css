@@ -132,6 +132,24 @@ th {
             background-color: 	#ffff00;
         }
 
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: #55ec23;
+            font-size: 50px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #4900ff; /* hover color */
+        }
+
 footer {
     text-align: center;
     padding: 5px;
